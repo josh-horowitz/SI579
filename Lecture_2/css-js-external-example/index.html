@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- ADDING JS AND CSS VIA EXTERNAL FILES -->
+<html>
+  <head>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- if you remove the `defer` attribribute, it won't work, because this
+        JavaScript expects ` <div id="javascript-will-add-content">` but it loads
+        and executes before that element is available -->
+    <script defer src="js/some_javascript.js"></script>
+  </head>
+  <body>
+    <h1>This is an example of external CSS with a pink background.</h1>
+    <div id="javascript-will-add-content"></div>
+  </body>
+</html>
