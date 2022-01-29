@@ -1,0 +1,34 @@
+body.blue{
+    background-color: #ADD8E6;
+}
+
+header li {
+    color: #FF7F50;
+    background-color: #00008b;
+    display: inline;
+}
+
+header a {
+    text-decoration: none;
+    color: #FF7F50;
+}
+
+h2 {
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+img {
+    border: 3px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+article {
+    border: 3px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    min-height: 200px;
+    max-width: 50%;
+    vertical-align: top;
+}

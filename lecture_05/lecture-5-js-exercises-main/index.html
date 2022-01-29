@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SI 579: Lecture 4 Exercises</title>
+  <style>
+            .correct {
+                color: green;
+            }
+            .incorrect {
+                color:red;
+            }
+            li.correct::before {
+                content: "\2713   ";
+                font-weight: bold;
+            }
+            li.incorrect::before {
+                content: "\2715   ";
+                font-weight: bold;
+            }
+
+            .invisible {
+                display: none;
+            }
+            .columns {
+                display: flex;
+            }
+            .box {
+                min-height: 50px;
+                min-width: 200px;
+                max-width: 500px;
+                margin: 12px;
+                border: 1px solid black;
+            }
+            .color-change.red {
+               background-color: rgba(255, 93, 93, 0.618);
+            }
+            .color-change.blue {
+              background-color: rgb(76, 76, 218);
+            }
+            .color-change.blue.red {
+              background-color: gray;
+            }
+            .color-change.blue.red:before {
+              content: 'should not have red and blue classes at the same time!'
+            }
+            #thebox {
+                padding: 12px;
+                font-weight: 700;
+            }
+            #fruit-list {
+                column-count: 3;
+            }
+            #transition-box {
+              background-color: aqua;
+              height: 40px;
+              width: 200px;
+            }
+
+            #transition-box[data-transitions] {
+              width: 600px;
+              height: 600px;
+              transform: rotate(2700deg);
+              background-color: coral;
+              transition: width 6s ease-in, height 4s, background-color 2s, transform 4s;
+            }
+            .already:after {
+              content: "(you got this one right already. No need to press the button every time you refresh the page.)";
+            }
+  </style>
+  <script defer src="do_not_edit1.js">
+  </script>
+  <script defer src="edit_this_file.js">
+  </script>
+  <script defer src="do_not_edit2.js">
+  </script>
+</head>
+<body>
+  <main>
+    <h1>SI 579: JavaScript DOM Lecture Exercises</h1>
+    <div class="columns">
+      <div>
+        <ul>
+          <li class="incorrect" id="p1">Problem 1: </li>
+          <li class="incorrect" id="p2">Problem 2: </li>
+          <li class="incorrect" id="p3">Problem 3: </li>
+          <li class="incorrect" id="p4">Problem 4: </li>
+          <li class="incorrect" id="p4-1">Problem 4.1: </li>
+          <li class="incorrect" id="p5">Problem 5: </li>
+          <li class="incorrect" id="p6">Problem 6: </li>
+          <li class="incorrect" id="p7">Problem 7: </li>
+          <li class="incorrect" id="p8">Problem 8: </li>
+          <li class="incorrect" id="p9">Problem 9: <button id="stop-changing-color" onclick="stopChanging(event)">run <code>stop changing colors</code></button></li>
+          <li class="incorrect" id="p10">Problem 10: </li>
+          <li class="incorrect" id="p10-1">Problem 10.1: </li>
+          <li class="incorrect" id="p11">Problem 11: <button id="show-animation" onclick="startTransitions(event)">run <code>startTransitions()</code></button></li>
+        </ul>
+      </div>
+      <div>
+        <div class="box" id="thebox">I am THAT box</div>
+        <div class="box">
+          <ul id="fruit-list"></ul>
+        </div>
+      </div>
+      <div>
+        <fieldset class="box">
+            <legend>Journey Start</legend>
+            <span id="traveler">I must reach my destination</span>
+        </fieldset>
+        <fieldset class="box" id="destination">
+            <legend>Journey Destination</legend>
+        </fieldset>
+        <div id="transition-box">
+            CSS transitions will happen here.
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
