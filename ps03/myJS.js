@@ -11,6 +11,19 @@ divElement.setAttribute('onclick', 'changeColor()');
 * Then write a function that changes the text and the color inside the div
 *
 */
+function getRgbList(str){
+    let rgbString = str.slice(str.indexOf('(')+1, str.length-1);
+    return rgbString.split(', ');
+}
+
+function componentToHex(c) {
+    var hex = parseInt(c).toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(l) {
+    return "#" + componentToHex(l[0]) + componentToHex(l[1]) + componentToHex(l[2]);
+}
 
 function changeColor(){
     //Write a condition determine what color it should be changed to
@@ -26,7 +39,13 @@ function changeColor(){
         //change the background color using JS
         divElement.removeAttribute('style');
         //Change the text of the color using the span id color-name
-        spanElement.textContent = getComputedStyle(divElement).backgroundColor;
+        let backgroundColor = getComputedStyle(divElement).getPropertyValue('background-color');
+        debugger
+        let backgroundColorList = getRgbList(backgroundColor);
+        spanElement.textContent = rgbToHex(backgroundColorList)
+        console.log(spanElement.textContent);
+        //rgb(123, 123, 123)
+        //split substring(+1 on ,
 
     }
 }
