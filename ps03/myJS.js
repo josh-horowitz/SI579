@@ -40,9 +40,8 @@ function changeColor(){
         divElement.removeAttribute('style');
         //Change the text of the color using the span id color-name
         let backgroundColor = getComputedStyle(divElement).getPropertyValue('background-color');
-        debugger
         let backgroundColorList = getRgbList(backgroundColor);
-        spanElement.textContent = rgbToHex(backgroundColorList)
+        spanElement.textContent = rgbToHex(backgroundColorList).toUpperCase();
         console.log(spanElement.textContent);
         //rgb(123, 123, 123)
         //split substring(+1 on ,
