@@ -1,6 +1,3 @@
-addTask('test1');
-addTask('test2', 1639944400000);
-
 function addTask(description, dueTime){
     const taskList = document.querySelector('#task_list');
     const newTask = document.createElement('li');
