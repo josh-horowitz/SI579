@@ -1,3 +1,7 @@
+const description = document.querySelector('#task_description_input');
+const dueDateInput = document.querySelector('#duedate_input');
+const dueTimeInput = document.querySelector('#duetime_input');
+
 function addTask(description, dueTime){
     const taskList = document.querySelector('#task_list');
     const newTask = document.createElement('li');
@@ -11,8 +15,10 @@ function addTask(description, dueTime){
     })
 }
 
-function clearDescription(description){
+function clearValues(){
     description.value = '';
+    dueDateInput.value = '';
+    dueTimeInput.value = '';
 }
 
 function dateAndTimeToTimestamp(dateInputElement, timeInputElement) {
@@ -31,19 +37,14 @@ function dateAndTimeToTimestamp(dateInputElement, timeInputElement) {
 
 const addTaskButton = document.querySelector('#add_task');
 addTaskButton.addEventListener('click',  (e) => {
-    const description = document.querySelector('#task_description_input');
-    const dueDateInput = document.querySelector('#duedate_input');
-    const dueTimeInput = document.querySelector('#duetime_input');
     addTask(description.value, dateAndTimeToTimestamp(dueDateInput, dueTimeInput));
-    clearDescription(description);
+    clearValues();
 })
 
 
-const description = document.querySelector('#task_description_input');
 description.addEventListener('keydown', (e) => {
     if(e.code === 'Enter'){
-        addTask(description.value, null);
-        clearDescription(description)
+        addTask(description.value, dateAndTimeToTimestamp(dueDateInput, dueTimeInput));
+        clearValues();
     }
 })
-
