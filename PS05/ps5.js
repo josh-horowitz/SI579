@@ -140,7 +140,7 @@ function getRhymes(event){
 }
 
 function getSynonyms(){
-    outputDescription.innerHTML = `<h1>Words that sound like ${wordInput.value}:</h1>`;
+    outputDescription.innerHTML = `<h1>Words with a similar meaning to ${wordInput.value}:</h1>`;
     printLoading();
     datamuseRequest(getDatamuseSimilarToUrl(wordInput.textContent), (result) => {
         if (result.length > 0) {
