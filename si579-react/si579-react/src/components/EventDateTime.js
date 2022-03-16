@@ -1,4 +1,9 @@
 import './EventDateTime.css';
+import { DateTime } from 'luxon';
+
+function convert(input) {
+    return DateTime.fromFormat(input, 'HH:mm:ss').toLocaleString(DateTime.TIME_SIMPLE);
+}
 
 const EventDateTime = (props) => {
     return(<div className='event__datetime'>
@@ -6,7 +11,7 @@ const EventDateTime = (props) => {
             {props.dateStart}
         </div>
         <div className='event__start-end'>
-            {props.timeStart}-{props.timeEnd}
+            {convert(props.timeStart)}-{convert(props.timeEnd)}
         </div>
     </div>)
 }

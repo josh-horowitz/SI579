@@ -5,37 +5,9 @@
     margin-right: auto;
 }
 
-.event {
-    background-color: #FFF;
-    border: 2px solid #ffcb05;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 20px;
-    display: flex;
-}
-
-.event__datetime {
-    padding: 6px;
-    min-width: 140px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    border-radius: 6px;
-    background-color: #d2d2d2;
-}
-
-.event__date {
+.events--loading {
     font-weight: 700;
-    font-size: 1.6rem;
-}
-
-.event__start-end {
-    font-style: italic;
-}
-
-.event__info {
-    padding: 6px 24px;
-}
-.event__info h2 {
-    margin-top: 0;
+    font-size: 3rem;
+    text-align: center;
+    color: #d2d2d2;
 }
